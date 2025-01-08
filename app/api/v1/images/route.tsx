@@ -10,6 +10,7 @@ export const runtime = "edge"
 export const POST = async (request: NextRequest) => {
   try {
     const body = await request.json()
+    console.log('Received body:', body)
 
     const template = templateSchema.parse(body)
     const fonts = getFontsFromTemplate(template.params)
